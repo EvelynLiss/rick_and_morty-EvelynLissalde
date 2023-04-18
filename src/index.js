@@ -1,19 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { BrowserRouter } from 'react-router-dom';
-import store from './Redux/store';
 import { Provider } from 'react-redux';
+import store from '../src/redux/store';
+import { BrowserRouter } from 'react-router-dom';
 
-
-ReactDOM.render(
-  <Provider store={store}>
-    <BrowserRouter>
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <Provider store={store}> {/*esto conecta a la app que es de React con la store de Redux*/}
+    <BrowserRouter> {/*esto es necesario para realizar el routing*/}
       <App />
     </BrowserRouter>
-  </Provider>,
-  document.getElementById('root')
-)
-
+  </Provider>
+);
 
