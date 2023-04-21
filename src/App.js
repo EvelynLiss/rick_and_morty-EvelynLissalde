@@ -9,8 +9,8 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 
-const URL_BASE = 'https://be-a-rym.up.railway.app/api/character';
-const API_KEY = '921c53ed19ee.c07a3c34e20b05d4765f';
+// const URL_BASE = 'https://be-a-rym.up.railway.app/api/character';
+// const API_KEY = '921c53ed19ee.c07a3c34e20b05d4765f';
 
 const email = 'dai@gmail.com';
 const password = '123asd';
@@ -33,7 +33,7 @@ function App() {
    }, [access])
 
    const onSearch = (id) => {
-      axios(`${URL_BASE}/${id}?key=${API_KEY}`)
+      axios(`http://localhost:3001/rickandmorty/character/${id}`)
       .then(response => response.data)
       .then((data) => {
          if (data.name) {
