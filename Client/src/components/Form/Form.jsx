@@ -1,5 +1,6 @@
 import { useState } from "react";
 import validation from "../Validation/Validation";
+import style from "../Form/Form.module.css"
 
 const Form = ({ login }) => {
     const [errors, setErrors] = useState({})
@@ -29,19 +30,23 @@ const Form = ({ login }) => {
 
 
     return(
-       
-        <form onSubmit={handleSubmit}>
-        
-            <label htmlFor="email"> </label>
-            <input type="text" name='email' value={userData.email} onChange={handleChange} style={{background: 'green', color: 'black', fontSize: '20px'}} />
-            {errors.email && <p>{errors.email}</p>}
-            <label htmlFor="password">Password: </label>
-            <input type="text" name='password' value={userData.password} onChange={handleChange} style={{background: 'green', color: 'black', fontSize: '20px'}}/>
-            {errors.password && <p>{errors.password}</p>}
-
-            <button>Submit</button>
-
-        </form>
+        <div className={style.container}>
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="email">Email:</label>
+                <input name="email" type="email" value={userData.email} onChange={handleChange}/>
+                {errors.email && <p>{errors.email}</p>}
+                <br/>
+                <label htmlFor="password">Password:</label>
+                <input name="password" type="password" value={userData.password} onChange={handleChange}/>
+                {errors.password && <p>{errors.password}</p>}
+                <button type="submit">Submit</button>
+            </form>
+            <div>
+                <h3>Access data:</h3>
+                <p>Email: dai@gmail.com</p>
+                <p>Pass: 123asd</p>
+            </div>
+        </div>
     )
 }
 

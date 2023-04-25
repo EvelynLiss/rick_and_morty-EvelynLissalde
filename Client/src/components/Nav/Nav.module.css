@@ -4,7 +4,8 @@
     border-radius: 999999rem;
     height: 3rem;
     /* box-shadow: 0 0 .2rem rgba(81, 255, 110, 0.461), 0 0 .2rem rgba(81, 255, 110, 0.461), 0 0 2rem rgba(81, 255, 110, 0.461); */
-    background-color: #33ff009b;
+    background-color: #80e4bd9b;
+    background-image: 'img/rym.jpg';
 }
 
 .btns{
@@ -15,7 +16,7 @@
 }
 
 .about{
-    color: black;
+    color: rgb(224, 156, 215);
     font-weight: 800;
     cursor: pointer;
     position: relative;
